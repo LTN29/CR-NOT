@@ -1,0 +1,12 @@
+services:
+  crenot-home:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: crenot-home:latest
+    container_name: crenot-home
+    restart: unless-stopped
+    ports:
+      - "${CRENOT_HTTP_BIND:-127.0.0.1:3121}:80"
+    environment:
+      TZ: Asia/Ho_Chi_Minh
