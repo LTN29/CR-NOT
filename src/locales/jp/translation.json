@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "features": "特徴",
+    "tech": "テクノロジー",
+    "specs": "仕様",
+    "buy": "購入する"
+  },
+  "hero": {
+    "title": "精度。力。パフォーマンス。",
+    "subtitle": "CRÉNOTスマートスケール。アスリートのために設計されました。洗練されたモノリシックガラスデザインに14の高度な身体指標を搭載。"
+  },
+  "philosophy": {
+    "quote": "あなたの体はエンジンです。エンジンのように測定してください。",
+    "author": "- CRÉNOT SPORTS"
+  },
+  "metrics": {
+    "title": "14のコア指標",
+    "desc": "体重だけではありません。医療レベルの精度で体組成を分析します。",
+    "weight": "体重",
+    "bmi": "BMI",
+    "bodyFat": "体脂肪率 (%)",
+    "muscleMass": "筋肉量",
+    "water": "体水分率 (%)",
+    "visceralFat": "内臓脂肪",
+    "boneMass": "骨量",
+    "bmr": "基礎代謝量 (BMR)",
+    "protein": "タンパク質率 (%)",
+    "metabolicAge": "体内年齢",
+    "subcutaneousFat": "皮下脂肪",
+    "skeletalMuscle": "骨格筋",
+    "fatFreeMass": "除脂肪体重",
+    "heartRate": "心拍数"
+  },
+  "tech": {
+    "title": "デュアル周波数BIAセンサー",
+    "desc": "高周波と低周波を利用して細胞膜を透過し、筋肥大と脂肪減少の追跡に絶対的な精度を提供します。"
+  },
+  "app": {
+    "title": "シームレスな同期",
+    "desc": "Bluetooth 5.0でCRÉNOT Healthアプリに瞬時に接続。Apple HealthおよびGoogle Fitと同期します。"
+  },
+  "specs": {
+    "title": "技術仕様",
+    "material": "材質：強化ガラス + ABS",
+    "capacity": "最大計量：180kg / 400lbs",
+    "display": "ディスプレイ：隠しLED",
+    "power": "電源：USB-C充電式"
+  },
+  "products": {
+    "title": "おすすめ製品",
+    "buyBtn": "今すぐ購入",
+    "outOfStock": "在庫切れ"
+  },
+  "cta": {
+    "title": "指標を支配する",
+    "price": "890,000 VND",
+    "button": "今すぐ注文"
+  },
+  "footer": {
+    "copyright": "© 2026 CRÉNOT. SimiGOによる独占販売。"
+  }
+}

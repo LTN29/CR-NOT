@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "home": "Trang Chủ",
+    "features": "Tính Năng",
+    "tech": "Công Nghệ",
+    "specs": "Thông Số",
+    "buy": "Mua Ngay"
+  },
+  "hero": {
+    "title": "CHUẨN XÁC. SỨC MẠNH. HIỆU SUẤT.",
+    "subtitle": "Cân thông minh CRÉNOT. Chế tác dành cho vận động viên. 14 chỉ số cơ thể chuyên sâu trong một thiết kế kính nguyên khối đẳng cấp."
+  },
+  "philosophy": {
+    "quote": "CƠ THỂ LÀ MỘT CỖ MÁY. HÃY ĐO LƯỜNG NÓ NHƯ MỘT CỖ MÁY.",
+    "author": "- CRÉNOT SPORTS"
+  },
+  "metrics": {
+    "title": "14 CHỈ SỐ CỐT LÕI",
+    "desc": "Vượt xa giới hạn cân nặng. Phân tích thành phần cơ thể bạn với độ chính xác chuẩn y tế.",
+    "weight": "Cân nặng",
+    "bmi": "BMI",
+    "bodyFat": "Tỷ lệ mỡ (%)",
+    "muscleMass": "Khối lượng cơ",
+    "water": "Tỷ lệ nước (%)",
+    "visceralFat": "Mỡ nội tạng",
+    "boneMass": "Khối lượng xương",
+    "bmr": "BMR (Trao đổi chất)",
+    "protein": "Tỷ lệ Protein (%)",
+    "metabolicAge": "Tuổi sinh học",
+    "subcutaneousFat": "Mỡ dưới da",
+    "skeletalMuscle": "Cơ xương",
+    "fatFreeMass": "Trọng lượng không mỡ",
+    "heartRate": "Nhịp tim"
+  },
+  "tech": {
+    "title": "CẢM BIẾN BIA TẦN SỐ KÉP",
+    "desc": "Sử dụng tần số cao và thấp để xuyên qua màng tế bào, mang lại sự chính xác tuyệt đối trong việc theo dõi phát triển cơ bắp và giảm mỡ."
+  },
+  "app": {
+    "title": "ĐỒNG BỘ MƯỢT MÀ",
+    "desc": "Bluetooth 5.0 kết nối ngay lập tức tới ứng dụng CRÉNOT Health. Đồng bộ với Apple Health & Google Fit. Trực quan hóa tiến trình của bạn."
+  },
+  "specs": {
+    "title": "THÔNG SỐ KỸ THUẬT",
+    "material": "Vật liệu: Kính cường lực + ABS",
+    "capacity": "Tải trọng: 180kg / 400lbs",
+    "display": "Màn hình: LED ẩn",
+    "power": "Nguồn: Sạc Type-C"
+  },
+  "products": {
+    "title": "SẢN PHẨM NỔI BẬT",
+    "buyBtn": "Mua Ngay",
+    "outOfStock": "Hết hàng"
+  },
+  "cta": {
+    "title": "LÀM CHỦ CÁC CHỈ SỐ",
+    "price": "890.000 VNĐ",
+    "button": "ĐẶT HÀNG NGAY"
+  },
+  "footer": {
+    "copyright": "© 2026 CRÉNOT. Phân phối độc quyền bởi SimiGO."
+  }
+}

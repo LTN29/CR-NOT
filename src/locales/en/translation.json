@@ -1,0 +1,63 @@
+{
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "tech": "Technology",
+    "specs": "Specs",
+    "buy": "Buy Now"
+  },
+  "hero": {
+    "title": "PRECISION. POWER. PERFORMANCE.",
+    "subtitle": "The CRÉNOT smart scale. Engineered for athletes. 14 advanced body metrics in one sleek, monolithic glass design."
+  },
+  "philosophy": {
+    "quote": "YOUR BODY IS AN ENGINE. MEASURE IT LIKE ONE.",
+    "author": "- CRÉNOT SPORTS"
+  },
+  "metrics": {
+    "title": "14 CORE METRICS",
+    "desc": "Go beyond weight. Analyze your entire body composition with clinical-grade accuracy.",
+    "weight": "Weight",
+    "bmi": "BMI",
+    "bodyFat": "Body Fat %",
+    "muscleMass": "Muscle Mass",
+    "water": "Body Water %",
+    "visceralFat": "Visceral Fat",
+    "boneMass": "Bone Mass",
+    "bmr": "BMR",
+    "protein": "Protein %",
+    "metabolicAge": "Metabolic Age",
+    "subcutaneousFat": "Subcutaneous Fat",
+    "skeletalMuscle": "Skeletal Muscle",
+    "fatFreeMass": "Fat-Free Mass",
+    "heartRate": "Heart Rate"
+  },
+  "tech": {
+    "title": "DUAL-FREQUENCY BIA SENSOR",
+    "desc": "Utilizing high and low frequencies to penetrate cell membranes, delivering absolute precision in tracking muscle hypertrophy and fat loss."
+  },
+  "app": {
+    "title": "SEAMLESS SYNC",
+    "desc": "Bluetooth 5.0 connects instantly to the CRÉNOT Health App. Syncs with Apple Health & Google Fit. Visualize your progress."
+  },
+  "specs": {
+    "title": "TECH SPECS",
+    "material": "Material: Tempered Glass + ABS",
+    "capacity": "Capacity: 180kg / 400lbs",
+    "display": "Display: Hidden LED",
+    "power": "Power: USB-C Rechargeable"
+  },
+  "products": {
+    "title": "FEATURED PRODUCTS",
+    "buyBtn": "Buy Now",
+    "outOfStock": "Out of Stock"
+  },
+  "cta": {
+    "title": "OWN THE METRICS",
+    "price": "890,000 VND",
+    "button": "ORDER NOW"
+  },
+  "footer": {
+    "copyright": "© 2026 CRÉNOT. Distributed by SimiGO."
+  }
+}
