@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { ShoppingBag, Search, Menu } from 'lucide-react';
+import { ShoppingBag, Search, Menu, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './Header.module.css';
 
@@ -46,6 +46,14 @@ export default function Header() {
           </ul>
 
           <div className={styles.headerActions}>
+            <div className={styles.langSelector}>
+              <Globe size={16} strokeWidth={1.5} className={styles.langIcon} />
+              <span className={styles.langActive}>VN</span>
+              <span className={styles.langDivider}>/</span>
+              <span className={styles.langOption} onClick={() => alert('English coming soon!')}>EN</span>
+              <span className={styles.langDivider}>/</span>
+              <span className={styles.langOption} onClick={() => alert('Japanese coming soon!')}>JP</span>
+            </div>
             <button className={styles.iconBtn} aria-label="Search" onClick={() => alert('Chức năng Tìm kiếm đang được phát triển.')}>
               <Search size={20} strokeWidth={1.5} />
             </button>

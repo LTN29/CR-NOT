@@ -126,6 +126,52 @@
   gap: var(--spacing-6);
 }
 
+.langSelector {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-right: var(--spacing-2);
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.langIcon {
+  margin-right: 2px;
+  opacity: 0.9;
+}
+
+.langActive {
+  font-weight: 700;
+}
+
+.langOption {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.langOption:hover {
+  opacity: 1;
+}
+
+.langDivider {
+  opacity: 0.3;
+  font-size: 11px;
+}
+
+/* Solid Brand Purple text for transparent header */
+.header:not(.headerScrolled):not(.headerInnerPage) .langSelector {
+  color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+  .langSelector {
+    display: none; /* Hide on mobile/tablet to save space */
+  }
+}
+
 .iconBtn {
   background: transparent;
   border: none;
