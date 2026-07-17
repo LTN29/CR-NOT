@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { getImageUrl } from '../../config';
 import styles from './HeroSection.module.css';
 
 export function HeroSection() {
@@ -21,7 +20,7 @@ export function HeroSection() {
       opacity: 1, 
       y: 0,
       filter: 'blur(0px)',
-      transition: { duration: 1.8, ease: [0.2, 0.8, 0.2, 1] }
+      transition: { duration: 1.8, ease: [0.2, 0.8, 0.2, 1] as const }
     }
   };
 
