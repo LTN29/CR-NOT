@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { Activity, Heart, TrendingUp, Smartphone } from 'lucide-react';
 import styles from './AppEcosystemSection.module.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export function AppEcosystemSection() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.section}>
       <div className={`container ${styles.container}`}>
@@ -13,8 +16,8 @@ export function AppEcosystemSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className={styles.eyebrow}>Ứng Dụng Độc Quyền</span>
-            <span className={styles.badge}>Đang Phát Triển</span>
+            <span className={styles.eyebrow}>{t('app.eyebrow')}</span>
+            <span className={styles.badge}>Coming Soon</span>
           </motion.div>
           <motion.h2 
             className={styles.title}
@@ -22,9 +25,8 @@ export function AppEcosystemSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-          >
-            Làm Chủ Sức Khỏe <br/> Trong Lòng <span>Bàn Tay</span>
-          </motion.h2>
+            dangerouslySetInnerHTML={{ __html: t('app.headline') }}
+          />
           <motion.p 
             className={styles.description}
             initial={{ opacity: 0, x: -20 }}
@@ -32,7 +34,7 @@ export function AppEcosystemSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Ứng dụng CRÉNOT kết nối đồng bộ với toàn bộ hệ sinh thái thiết bị. Phân tích dữ liệu inBody chi tiết, theo dõi lộ trình làm đẹp và cung cấp phác đồ cá nhân hóa ngay trên smartphone của bạn.
+            {t('app.desc')}
           </motion.p>
           
           <motion.div 
@@ -44,19 +46,19 @@ export function AppEcosystemSection() {
           >
             <div className={styles.feature}>
               <div className={styles.featureIcon}><Activity size={18} /></div>
-              Phân tích 14 chỉ số cơ thể
+              {t('app.feature1')}
             </div>
             <div className={styles.feature}>
               <div className={styles.featureIcon}><TrendingUp size={18} /></div>
-              Theo dõi tiến độ
+              {t('app.feature2')}
             </div>
             <div className={styles.feature}>
               <div className={styles.featureIcon}><Heart size={18} /></div>
-              Gợi ý lối sống khoẻ
+              {t('app.feature3')}
             </div>
             <div className={styles.feature}>
               <div className={styles.featureIcon}><Smartphone size={18} /></div>
-              Đồng bộ Cloud
+              {t('app.feature4')}
             </div>
           </motion.div>
 

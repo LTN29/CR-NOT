@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import styles from './HeroSection.module.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export function HeroSection() {
+  const { t } = useLanguage();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -65,10 +67,10 @@ export function HeroSection() {
           
           <motion.div variants={itemVariants} className={styles.actions}>
             <a href="#products" className={styles.btnPrimary}>
-              Khám phá sản phẩm
+              {t('hero.btn_explore')}
             </a>
             <a href="#about" className={styles.btnSecondary}>
-              Về CRÉNOT
+              {t('hero.btn_about')}
               <ArrowRight size={18} className={styles.btnIcon} />
             </a>
           </motion.div>

@@ -3,11 +3,13 @@ import { useLocation, Link } from 'react-router-dom';
 import { ShoppingBag, Search, Menu, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './Header.module.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,23 +40,23 @@ export default function Header() {
           
           <ul className={styles.menu}>
             <li>
-              <Link to="/" onClick={() => window.scrollTo(0,0)} className={`${styles.menuLink} ${isHomePage ? styles.active : ''}`}>Trang Chủ</Link>
+              <Link to="/" onClick={() => window.scrollTo(0,0)} className={`${styles.menuLink} ${isHomePage ? styles.active : ''}`}>{t('header.home')}</Link>
             </li>
-            <li><a href="#products" className={styles.menuLink}>Sản Phẩm</a></li>
-            <li><a href="#about" className={styles.menuLink}>Về Chúng Tôi</a></li>
-            <li><a href="#support" className={styles.menuLink}>Hỗ Trợ</a></li>
+            <li><a href="#products" className={styles.menuLink}>{t('header.products')}</a></li>
+            <li><a href="#about" className={styles.menuLink}>{t('header.about')}</a></li>
+            <li><a href="#support" className={styles.menuLink}>{t('header.support')}</a></li>
           </ul>
 
           <div className={styles.headerActions}>
             <div className={styles.langSelector}>
               <Globe size={16} strokeWidth={1.5} className={styles.langIcon} />
-              <span className={styles.langActive}>VN</span>
+              <span className={language === 'vi' ? styles.langActive : styles.langOption} onClick={() => setLanguage('vi')}>VN</span>
               <span className={styles.langDivider}>/</span>
-              <span className={styles.langOption} onClick={() => alert('English coming soon!')}>EN</span>
+              <span className={language === 'en' ? styles.langActive : styles.langOption} onClick={() => setLanguage('en')}>EN</span>
               <span className={styles.langDivider}>/</span>
-              <span className={styles.langOption} onClick={() => alert('Japanese coming soon!')}>JP</span>
+              <span className={language === 'jp' ? styles.langActive : styles.langOption} onClick={() => setLanguage('jp')}>JP</span>
             </div>
-            <button className={styles.iconBtn} aria-label="Search" onClick={() => alert('Chức năng Tìm kiếm đang được phát triển.')}>
+            <button className={styles.iconBtn} aria-label="Search" onClick={() => alert(t('header.search_alert'))}>
               <Search size={20} strokeWidth={1.5} />
             </button>
             <a href="https://simi.vn" target="_blank" rel="noopener noreferrer" className={styles.iconBtn} aria-label="Cart">

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { products } from '../../data/products';
 import { getImageUrl } from '../../config';
 import styles from './ProductEcosystemSection.module.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 function ProductCard({ product, index }: { product: any, index: number }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -64,7 +65,7 @@ function ProductCard({ product, index }: { product: any, index: number }) {
           onMouseLeave={handleMouseLeave}
           style={{ rotateX, rotateY }}
         >
-          <img src={currentImage} alt={product.name} className={styles.productImage} />
+          <img src={currentImage} alt={product.name} className={styles.productImage} loading="lazy" />
         </motion.div>
       </motion.div>
       
@@ -89,6 +90,8 @@ function ProductCard({ product, index }: { product: any, index: number }) {
 }
 
 export function ProductEcosystemSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="products" className={styles.section}>
       <div className={styles.container}>
@@ -105,6 +108,7 @@ export function ProductEcosystemSection() {
             src={getImageUrl('/banner.webp')} 
             alt="Crenot Product Ecosystem Banner" 
             className={styles.bannerImage}
+            loading="lazy"
           />
         </motion.div>
 
@@ -115,7 +119,7 @@ export function ProductEcosystemSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            Hệ Sinh Thái Đẳng Cấp
+            {t('products.headline')}
           </motion.h2>
         </div>
 

@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import { getImageUrl } from '../../config';
 import styles from './LifestyleSection.module.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export function LifestyleSection() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.section}>
-      <img src={getImageUrl('/crenot-factory.webp')} alt="Lifestyle" className={styles.bgImage} />
+      <img src={getImageUrl('/crenot-factory.webp')} alt="Lifestyle" className={styles.bgImage} loading="lazy" />
       
       <div className={`container ${styles.content}`}>
         <motion.h2 
@@ -15,7 +18,7 @@ export function LifestyleSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          Kỷ Nguyên Sống Khoẻ
+          {t('lifestyle.headline')}
         </motion.h2>
         
         <motion.p 
@@ -25,7 +28,7 @@ export function LifestyleSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Gia nhập cộng đồng hàng triệu người dùng CRÉNOT trên toàn thế giới. Chúng tôi không chỉ thay đổi thói quen, chúng tôi kiến tạo một phong cách sống mới – Năng động, Hiện đại và Đầy cảm hứng.
+          {t('lifestyle.desc')}
         </motion.p>
         
         <motion.div 
@@ -37,15 +40,15 @@ export function LifestyleSection() {
         >
           <div className={styles.statItem}>
             <span className={styles.statNumber}>1M+</span>
-            <span className={styles.statLabel}>Người dùng tin tưởng</span>
+            <span className={styles.statLabel}>{t('lifestyle.stat1')}</span>
           </div>
           <div className={styles.statItem}>
             <span className={styles.statNumber}>14</span>
-            <span className={styles.statLabel}>Chỉ số đo lường</span>
+            <span className={styles.statLabel}>{t('lifestyle.stat2')}</span>
           </div>
           <div className={styles.statItem}>
             <span className={styles.statNumber}>24/7</span>
-            <span className={styles.statLabel}>Đồng hành sức khoẻ</span>
+            <span className={styles.statLabel}>{t('lifestyle.stat3')}</span>
           </div>
         </motion.div>
       </div>

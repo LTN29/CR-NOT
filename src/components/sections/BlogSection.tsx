@@ -2,8 +2,11 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { posts } from '../../data/blogs';
 import styles from './BlogSection.module.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export function BlogSection() {
+  const { t } = useLanguage();
+
   return (
     <section className={styles.section}>
       <div className="container">
@@ -15,7 +18,7 @@ export function BlogSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              Câu Chuyện CRÉNOT
+              {t('blog.headline')}
             </motion.h2>
             <motion.p 
               className={styles.subtitle}
@@ -24,7 +27,7 @@ export function BlogSection() {
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
             >
-              Khám phá tri thức về sức khỏe, làm đẹp và lối sống hiện đại.
+              {t('blog.subtitle')}
             </motion.p>
           </div>
           <motion.a 
@@ -35,7 +38,7 @@ export function BlogSection() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Xem Tất Cả Bài Viết
+            {t('blog.view_all')}
           </motion.a>
         </div>
 
@@ -51,7 +54,7 @@ export function BlogSection() {
               >
                 <div className={styles.imageWrapper}>
                   <div className={styles.category}>{post.category}</div>
-                  <img src={post.image} alt={post.title} className={styles.image} />
+                  <img src={post.image} alt={post.title} className={styles.image} loading="lazy" />
                 </div>
                 <div className={styles.date}>{post.date}</div>
                 <h3 className={styles.cardTitle}>{post.title}</h3>

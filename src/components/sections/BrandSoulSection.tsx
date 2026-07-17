@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion';
 import styles from './BrandSoulSection.module.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export function BrandSoulSection() {
+  const { t } = useLanguage();
   return (
     <section id="about" className={styles.section}>
       <motion.div 
@@ -21,7 +23,7 @@ export function BrandSoulSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          Nội Tâm Thương Hiệu
+          {t('brand_soul.eyebrow')}
         </motion.span>
         
         <motion.h2 
@@ -30,9 +32,8 @@ export function BrandSoulSection() {
           whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        >
-          Không chỉ là thiết bị. <br/> Đó là <span>Phong Cách Sống</span>.
-        </motion.h2>
+          dangerouslySetInnerHTML={{ __html: t('brand_soul.headline') }}
+        />
         
         <motion.p 
           className={styles.description}
@@ -41,7 +42,7 @@ export function BrandSoulSection() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
-          Chúng tôi tin rằng sức khoẻ và sắc đẹp bắt nguồn từ sự thấu hiểu cơ thể. CRÉNOT ra đời mang theo sứ mệnh cung cấp những giải pháp công nghệ y tế và làm đẹp tiên tiến nhất, giúp bạn chủ động kiến tạo một phiên bản hoàn hảo hơn mỗi ngày.
+          {t('brand_soul.desc')}
         </motion.p>
       </div>
     </section>

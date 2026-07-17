@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import styles from './TechnologySection.module.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export function TechnologySection() {
+  const { t } = useLanguage();
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,9 +38,8 @@ export function TechnologySection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-          >
-            Đột Phá <span>Công Nghệ</span>
-          </motion.h2>
+            dangerouslySetInnerHTML={{ __html: t('tech.headline') }}
+          />
           <motion.p 
             className={styles.subtitle}
             initial={{ opacity: 0, y: 20 }}
@@ -45,7 +47,7 @@ export function TechnologySection() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.1 }}
           >
-            Sự kết hợp hoàn hảo giữa vật liệu cao cấp và công nghệ cảm biến thông minh nhất từ Nhật Bản.
+            {t('tech.desc')}
           </motion.p>
         </div>
 
@@ -57,20 +59,20 @@ export function TechnologySection() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div className={styles.card} variants={itemVariants}>
-            <h3 className={styles.cardTitle}>Chip Xử Lý Kép</h3>
-            <p className={styles.cardDesc}>Tích hợp AI để phân tích dữ liệu cơ thể một cách chính xác tuyệt đối trong chưa đầy 3 giây.</p>
+            <h3 className={styles.cardTitle}>{t('tech.card1.title')}</h3>
+            <p className={styles.cardDesc}>{t('tech.card1.desc')}</p>
             <div className={styles.techLine}></div>
           </motion.div>
 
           <motion.div className={styles.card} variants={itemVariants}>
-            <h3 className={styles.cardTitle}>Triệt Lông Băng Lạnh</h3>
-            <p className={styles.cardDesc}>Công nghệ triệt lạnh -10°C mang lại cảm giác dễ chịu, an toàn tuyệt đối cho mọi loại da.</p>
+            <h3 className={styles.cardTitle}>{t('tech.card2.title')}</h3>
+            <p className={styles.cardDesc}>{t('tech.card2.desc')}</p>
             <div className={styles.techLine}></div>
           </motion.div>
 
           <motion.div className={styles.card} variants={itemVariants}>
-            <h3 className={styles.cardTitle}>Đo InBody 8 Điểm</h3>
-            <p className={styles.cardDesc}>Phân tích chuyên sâu 14 chỉ số như máy đo tại phòng gym chuyên nghiệp với độ sai số cực thấp.</p>
+            <h3 className={styles.cardTitle}>{t('tech.card3.title')}</h3>
+            <p className={styles.cardDesc}>{t('tech.card3.desc')}</p>
             <div className={styles.techLine}></div>
           </motion.div>
         </motion.div>
