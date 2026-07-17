@@ -32,7 +32,7 @@ export default function Header() {
         <nav className={styles.nav}>
           <Link to="/" className={styles.logo}>
             <img 
-              src="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/logo.webp" 
+              src="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/Crenot-Logo.png" 
               alt="CRÉNOT Logo" 
               className={styles.logoImage}
             />

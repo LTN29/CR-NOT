@@ -2,6 +2,7 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useMemo, useEffect } from 'react';
 import { products } from '../data/products';
+import { useLanguage } from '../contexts/LanguageContext';
 import styles from './ProductDetailPage.module.css';
 
 // SVG Icons
@@ -22,6 +23,7 @@ export default function ProductDetailPage() {
   const { id } = useParams();
   const product = products.find(p => p.id === id);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   // Parse colors from image URLs
   const availableColors = useMemo(() => {
@@ -80,7 +82,7 @@ export default function ProductDetailPage() {
       <div className={styles.container}>
         
         <Link to="/" className={styles.backLink}>
-          &larr; Trở về Trang Chủ
+          &larr; {t('product_detail.back')}
         </Link>
 
         {/* Overview Section */}
@@ -128,32 +130,32 @@ export default function ProductDetailPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className={styles.category}>{product.category}</div>
-              <h1 className={styles.title}>{product.name}</h1>
+              <div className={styles.category}>{t(`products_data.${product.id}.category`)}</div>
+              <h1 className={styles.title}>{t(`products_data.${product.id}.name`)}</h1>
               
               {hasMultipleColors && (
                 <div className={styles.swatchesContainer}>
-                  <span className={styles.swatchLabel}>Màu sắc:</span>
+                  <span className={styles.swatchLabel}>{t('product_detail.color')}</span>
                   <div className={styles.swatches}>
                     <button 
                       className={`${styles.swatchBtn} ${activeColor === 'white' ? styles.active : ''}`}
                       onClick={() => setActiveColor('white')}
                     >
                       <div className={styles.colorCircle} style={{ background: '#FFFFFF' }} />
-                      Trắng
+                      {t('product_detail.white')}
                     </button>
                     <button 
                       className={`${styles.swatchBtn} ${activeColor === 'black' ? styles.active : ''}`}
                       onClick={() => setActiveColor('black')}
                     >
                       <div className={styles.colorCircle} style={{ background: '#111111' }} />
-                      Đen
+                      {t('product_detail.black')}
                     </button>
                   </div>
                 </div>
               )}
 
-              <p className={styles.description}>{product.description}</p>
+              <p className={styles.description}>{t(`products_data.${product.id}.desc`)}</p>
               
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 <a 
@@ -162,11 +164,11 @@ export default function ProductDetailPage() {
                   rel="noopener noreferrer" 
                   className={styles.buyBtn}
                 >
-                  Mua Hàng Chính Hãng
+                  {t('product_detail.buy')}
                 </a>
                 
                 <button onClick={scrollToSpecs} className={styles.scrollIndicator}>
-                  Khám phá Thông số Kỹ thuật <ArrowDownIcon />
+                  {t('product_detail.explore_specs')} <ArrowDownIcon />
                 </button>
               </div>
             </motion.div>
@@ -182,9 +184,9 @@ export default function ProductDetailPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className={styles.sectionTitle}>Công Nghệ Tiên Phong</h2>
+            <h2 className={styles.sectionTitle}>{t('product_detail.tech')}</h2>
             <div className={styles.featuresGrid}>
-              {product.features.map((feature, idx) => (
+              {(t(`products_data.${product.id}.features`) || product.features).map((feature: string, idx: number) => (
                 <div key={idx} className={styles.featureCard}>
                   <div className={styles.featureIcon}>
                     <CheckIcon />
@@ -204,12 +206,12 @@ export default function ProductDetailPage() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className={styles.sectionTitle}>Thông Số Kỹ Thuật</h2>
+            <h2 className={styles.sectionTitle}>{t('product_detail.specs')}</h2>
             <div className={styles.specsContainer}>
-              {Object.entries(product.specs).map(([key, value], idx) => (
+              {Object.entries(t(`products_data.${product.id}.specs`) || product.specs).map(([key, value], idx) => (
                 <div key={idx} className={styles.specRow}>
                   <div className={styles.specLabel}>{key}</div>
-                  <div className={styles.specValue}>{value}</div>
+                  <div className={styles.specValue}>{value as string}</div>
                 </div>
               ))}
             </div>

@@ -48,9 +48,30 @@
     "power": "Nguồn: Sạc Type-C"
   },
   "products": {
-    "title": "SẢN PHẨM NỔI BẬT",
-    "buyBtn": "Mua Ngay",
-    "outOfStock": "Hết hàng"
+    "headline": "Sản Phẩm Đột Phá",
+    "explore": "KHÁM PHÁ"
+  },
+  "products_data": {
+    "s2": {
+      "category": "SỨC KHOẺ & LÀM ĐẸP",
+      "name": "Cân sức khỏe điện tử Crenot Gofit S2",
+      "desc": "Cân điện tử thông minh Gofit S2 là thiết bị không thể thiếu cho sức khỏe gia đình bạn. Sở hữu thiết kế tối giản, thanh lịch chuẩn Âu-Nhật, Gofit S2 dễ dàng theo dõi chi tiết sức khỏe qua điện thoại."
+    },
+    "x6": {
+      "category": "SỨC KHOẺ ĐỈNH CAO",
+      "name": "Cân Sức Khỏe Điện Tử Crenot Gofit X6 Pro",
+      "desc": "Crenot Gofit X6 Pro là dòng cân điện tử thông minh nâng cấp với màn hình màu siêu lớn, cho phép bạn theo dõi 8 chỉ số trực tiếp ngay trên cân. Thiết kế nổi bật với tông màu Cam cá tính."
+    },
+    "i8": {
+      "category": "SỨC KHOẺ ĐỈNH CAO",
+      "name": "Cân đo inBody 8 điểm chạm Crenot Inbody i8",
+      "desc": "Inbody i8 là cuộc cách mạng công nghệ đo lường tại nhà. Với 8 điểm chạm và công nghệ PureBIA®, i8 phân tích chi tiết từng vùng cơ thể (Tay, Chân, Thân) với độ chính xác chuẩn phòng tập."
+    },
+    "x3": {
+      "category": "CHĂM SÓC SẮC ĐẸP",
+      "name": "Máy Triệt Lông Cá Nhân Crenot Graci X3",
+      "desc": "Trải nghiệm spa tại nhà với máy triệt lông Crenot Graci X3 sử dụng công nghệ IPL và làm lạnh bề mặt chuyên sâu."
+    }
   },
   "cta": {
     "title": "LÀM CHỦ CÁC CHỈ SỐ",

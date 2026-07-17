@@ -30,12 +30,18 @@ export function HeroSection() {
     <section className={styles.hero}>
       {/* Background Image without scale animation to prevent blur */}
       <div className={styles.bgWrapper}>
-        <img 
-          src="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/banner_crenot.png" 
-          alt="Crenot Active Lifestyle" 
-          className={styles.bgImage}
-          fetchPriority="high"
-        />
+        <picture>
+          <source 
+            media="(max-width: 768px)" 
+            srcSet="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/crenot_banner_mobile.png" 
+          />
+          <img 
+            src="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/banner_crenot.png" 
+            alt="Crenot Active Lifestyle" 
+            className={styles.bgImage}
+            fetchPriority="high"
+          />
+        </picture>
         <div className={styles.bgOverlay}></div>
         
         {/* Premium Curtain Reveal */}

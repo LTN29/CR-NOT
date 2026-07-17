@@ -53,12 +53,12 @@ export function BlogSection() {
                 transition={{ duration: 0.6, delay: index * 0.15 }}
               >
                 <div className={styles.imageWrapper}>
-                  <div className={styles.category}>{post.category}</div>
-                  <img src={post.image} alt={post.title} className={styles.image} loading="lazy" />
+                  <div className={styles.category}>{t(`blogs_data.${post.id}.category`)}</div>
+                  <img src={post.image} alt={t(`blogs_data.${post.id}.title`)} className={styles.image} loading="lazy" />
                 </div>
-                <div className={styles.date}>{post.date}</div>
-                <h3 className={styles.cardTitle}>{post.title}</h3>
-                <p className={styles.excerpt}>{post.excerpt}</p>
+                <div className={styles.date}>{t(`blogs_data.${post.id}.date`)}</div>
+                <h3 className={styles.cardTitle}>{t(`blogs_data.${post.id}.title`)}</h3>
+                <p className={styles.excerpt}>{t(`blogs_data.${post.id}.excerpt`)}</p>
               </motion.div>
             </Link>
           ))}

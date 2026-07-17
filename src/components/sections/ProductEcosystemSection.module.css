@@ -126,6 +126,12 @@
   background: radial-gradient(circle, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0) 60%);
 }
 
+@media (max-width: 768px) {
+  .imageBox {
+    height: 300px;
+  }
+}
+
 .productImage {
   max-height: 100%;
   object-fit: contain;

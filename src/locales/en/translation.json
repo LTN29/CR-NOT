@@ -48,9 +48,30 @@
     "power": "Power: USB-C Rechargeable"
   },
   "products": {
-    "title": "FEATURED PRODUCTS",
-    "buyBtn": "Buy Now",
-    "outOfStock": "Out of Stock"
+    "headline": "Breakthrough Products",
+    "explore": "EXPLORE"
+  },
+  "products_data": {
+    "s2": {
+      "category": "HEALTH & BEAUTY",
+      "name": "Crenot Gofit S2 Smart Body Scale",
+      "desc": "The Gofit S2 smart scale is an essential device for your family's health. Featuring a minimalist, elegant Euro-Japanese design, Gofit S2 makes it easy to track detailed health metrics via smartphone."
+    },
+    "x6": {
+      "category": "PEAK HEALTH",
+      "name": "Crenot Gofit X6 Pro Smart Body Scale",
+      "desc": "Crenot Gofit X6 Pro is an upgraded smart scale with an ultra-large color display, allowing you to track 8 metrics directly on the scale. Standout design with a bold Orange tone."
+    },
+    "i8": {
+      "category": "PEAK HEALTH",
+      "name": "Crenot Inbody i8 8-Point Measurement Scale",
+      "desc": "Inbody i8 is a home measurement technology revolution. With 8 contact points and PureBIA® technology, i8 analyzes each body segment (Arms, Legs, Torso) with gym-standard accuracy."
+    },
+    "x3": {
+      "category": "BEAUTY CARE",
+      "name": "Crenot Graci X3 Personal Hair Removal Machine",
+      "desc": "Experience a home spa with the Crenot Graci X3 hair removal machine using IPL technology and deep surface cooling."
+    }
   },
   "cta": {
     "title": "OWN THE METRICS",

@@ -44,18 +44,17 @@
 }
 
 .logoImage {
-  height: 200px; /* Massive to combat transparent padding */
+  height: 45px;
   width: auto;
-  max-width: 300px;
   object-fit: contain;
-  margin-left: -30px; 
+  margin-left: 0; 
   transition: all 0.4s ease;
 }
 
 /* Shrink logo when scrolled */
 .headerScrolled .logoImage,
 .headerInnerPage .logoImage {
-  height: 140px;
+  height: 35px;
 }
 
 .menu {
@@ -195,5 +194,31 @@
 @media (max-width: 1024px) {
   .mobileMenuBtn {
     display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 70px;
+  }
+  .headerScrolled,
+  .headerInnerPage {
+    height: 60px;
+  }
+  .container {
+    padding: 0 16px;
+  }
+  .logoImage {
+    height: 35px;
+    width: auto;
+    margin-left: 0;
+  }
+  .headerScrolled .logoImage,
+  .headerInnerPage .logoImage {
+    height: 28px;
+    width: auto;
+  }
+  .headerActions {
+    gap: var(--spacing-2);
   }
 }

@@ -49,7 +49,7 @@
   transform: translate(-50%, -50%);
   width: 100%;
   text-align: center;
-  font-size: clamp(8rem, 15vw, 30rem); /* Optimized to fit the screen */
+  font-size: clamp(4rem, 18vw, 30rem); /* Optimized to fit the screen on mobile */
   font-family: var(--font-family-display);
   font-weight: 700;
   color: rgba(41, 16, 60, 0.04); /* Slightly more visible */

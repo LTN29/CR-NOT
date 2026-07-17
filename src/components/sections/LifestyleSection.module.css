@@ -68,3 +68,21 @@
   color: var(--color-text-secondary);
   margin-top: var(--spacing-2);
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--spacing-16) 0;
+  }
+  .title {
+    font-size: 32px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .stats {
+    flex-direction: column;
+    gap: var(--spacing-8);
+    padding-top: var(--spacing-8);
+    margin-top: var(--spacing-8);
+  }
+}

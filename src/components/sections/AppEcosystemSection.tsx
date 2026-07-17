@@ -76,10 +76,10 @@ export function AppEcosystemSection() {
             <div className={styles.phoneNotch}></div>
             <div className={styles.phoneScreen}>
               <h2>CRÉNOT</h2>
-              <p style={{marginTop: '1rem', opacity: 0.8}}>Sức khoẻ của bạn,<br/>Dữ liệu của bạn.</p>
+              <p style={{marginTop: '1rem', opacity: 0.8}} dangerouslySetInnerHTML={{ __html: t('app.graphic_tagline') }}></p>
               
               <div style={{marginTop: '2rem', padding: '1rem', background: 'rgba(255,255,255,0.2)', borderRadius: '1rem', width: '80%'}}>
-                <div style={{fontSize: '0.8rem', opacity: 0.8}}>Chỉ số Cơ Tế Bào</div>
+                <div style={{fontSize: '0.8rem', opacity: 0.8}}>{t('app.graphic_cellular')}</div>
                 <div style={{fontSize: '2rem', fontWeight: 'bold'}}>98.5%</div>
               </div>
             </div>
@@ -97,7 +97,7 @@ export function AppEcosystemSection() {
           >
             <Activity color="var(--color-primary)" />
             <div>
-              <div style={{fontSize: '0.7rem', color: 'var(--color-text-secondary)'}}>Lượng Mỡ</div>
+              <div style={{fontSize: '0.7rem', color: 'var(--color-text-secondary)'}}>{t('app.graphic_fat')}</div>
               <div className={styles.pulseData}>12.4%</div>
             </div>
           </motion.div>
@@ -114,7 +114,7 @@ export function AppEcosystemSection() {
           >
             <Heart color="var(--color-energy-red)" />
             <div>
-              <div style={{fontSize: '0.7rem', color: 'var(--color-text-secondary)'}}>Điểm Sức Khoẻ</div>
+              <div style={{fontSize: '0.7rem', color: 'var(--color-text-secondary)'}}>{t('app.graphic_score')}</div>
               <div className={styles.pulseData}>95/100</div>
             </div>
           </motion.div>

@@ -49,6 +49,8 @@ function ProductCard({ product, index }: { product: any, index: number }) {
 
   const currentImage = product.images && product.images.length > 0 ? product.images[currentImageIndex] : product.image;
 
+  const { t } = useLanguage();
+
   return (
     <div className={`${styles.productRow} ${index % 2 !== 0 ? styles.reverse : ''}`}>
       <motion.div 
@@ -76,12 +78,12 @@ function ProductCard({ product, index }: { product: any, index: number }) {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <div className={styles.category}>{product.category}</div>
-          <h3 className={styles.productName}>{product.name}</h3>
-          <p className={styles.description}>{product.description}</p>
+          <div className={styles.category}>{t(`products_data.${product.id}.category`)}</div>
+          <h3 className={styles.productName}>{t(`products_data.${product.id}.name`)}</h3>
+          <p className={styles.description}>{t(`products_data.${product.id}.desc`)}</p>
           
           <Link to={`/product/${product.id}`} className={styles.actionBtn}>
-            Khám Phá
+            {t('products.explore')}
           </Link>
         </motion.div>
       </div>

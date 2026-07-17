@@ -48,9 +48,30 @@
     "power": "電源：USB-C充電式"
   },
   "products": {
-    "title": "おすすめ製品",
-    "buyBtn": "今すぐ購入",
-    "outOfStock": "在庫切れ"
+    "headline": "画期的な製品",
+    "explore": "探求する"
+  },
+  "products_data": {
+    "s2": {
+      "category": "ヘルス＆ビューティー",
+      "name": "Crenot Gofit S2 スマート体組成計",
+      "desc": "Gofit S2スマートスケールはご家庭の健康に欠かせないデバイスです。ミニマリストでエレガントな欧日デザインを採用し、スマートフォンで詳細な健康指標を簡単に追跡できます。"
+    },
+    "x6": {
+      "category": "ピークヘルス",
+      "name": "Crenot Gofit X6 Pro スマート体組成計",
+      "desc": "Crenot Gofit X6 Proは、超大型カラーディスプレイを備えたアップグレード版スマートスケールで、8つの指標をスケール上で直接追跡できます。大胆なオレンジトーンの際立つデザイン。"
+    },
+    "i8": {
+      "category": "ピークヘルス",
+      "name": "Crenot Inbody i8 8点測定体組成計",
+      "desc": "Inbody i8は家庭用測定技術の革命です。8つの接点とPureBIA®テクノロジーにより、i8は各体の部位（腕、脚、胴体）をジムレベルの精度で詳細に分析します。"
+    },
+    "x3": {
+      "category": "ビューティーケア",
+      "name": "Crenot Graci X3 家庭用脱毛器",
+      "desc": "IPL技術と深部表面冷却を使用したCrenot Graci X3脱毛器でホームスパを体験してください。"
+    }
   },
   "cta": {
     "title": "指標を支配する",

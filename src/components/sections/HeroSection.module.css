@@ -1,14 +1,13 @@
 .hero {
-  /* Compensate for html { zoom: 0.9; } to ensure it covers the full physical screen height (100 / 0.9 = 111.11) */
-  height: 111.5vh; 
+  /* Use min-height 100vh to ensure it always covers the full screen height */
+  height: 100vh;
   min-height: 600px;
-  max-height: 1200px;
   position: relative;
   display: flex;
   align-items: center;
   color: #ffffff;
   overflow: hidden;
-  background-color: #0d0a14; /* Deep dark purple/black to prevent white flash */
+  background-color: #0d0a14;
 }
 
 .bgWrapper {
@@ -17,14 +16,23 @@
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   z-index: 0;
+}
+
+/* Make sure the picture tag fills the wrapper */
+.bgWrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .bgImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%; /* Anchor near the top to preserve the sky and the building logo */
+  object-position: center;
+  transition: transform 1.5s ease-out;
 }
 
 .bgOverlay {
@@ -33,7 +41,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* Very light overlay just to ensure text is readable, keeping image clear */
   background: rgba(0, 0, 0, 0.15);
 }
 
@@ -41,24 +48,23 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1400px; /* Wider for more breathing room */
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--spacing-8);
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; /* Center horizontally */
+  justify-content: center;
 }
 
 .content {
   max-width: 800px;
-  padding: var(--spacing-8); /* Reduced padding */
-  margin-top: 38vh; /* Moved up slightly */
+  padding: var(--spacing-8);
+  margin-top: 38vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center contents */
-  text-align: center; /* Center text */
-  /* Removed glassmorphism background and borders for a cleaner, floating text look */
+  align-items: center;
+  text-align: center;
 }
 
 .eyebrow {
@@ -84,18 +90,18 @@
 }
 
 .title {
-  font-family: var(--font-family-base); /* Standard clear sans-serif font */
-  font-size: clamp(28px, 3.5vw, 42px); /* Smaller size */
-  font-weight: 600; /* Bold/clear weight */
+  font-family: var(--font-family-base);
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 600;
   line-height: 1.3;
   margin-bottom: var(--spacing-8);
-  letter-spacing: normal; /* Normal reading spacing */
+  letter-spacing: normal;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); 
-  text-transform: none; /* Sentence/Title case for clear readability */
+  text-transform: none;
 }
 
 .title span {
-  font-weight: 600; /* Keep weight consistent */
+  font-weight: 600;
   display: block;
   background: none;
   color: #ffffff;
@@ -110,7 +116,7 @@
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--spacing-12);
   max-width: 580px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .actions {
@@ -122,7 +128,7 @@
 }
 
 .btnPrimary {
-  background: rgba(255, 255, 255, 0.1); /* Liquid glass base */
+  background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   padding: 0 36px;
   height: 56px;
@@ -137,8 +143,8 @@
   transition: all var(--transition-normal);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Glass edge */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Glass depth */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .btnPrimary:hover {
@@ -193,9 +199,6 @@
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .title {
-    font-size: clamp(42px, 6vw, 56px);
-  }
   .container {
     padding: 0 var(--spacing-6);
   }
@@ -203,36 +206,63 @@
 
 @media (max-width: 768px) {
   .hero {
-    align-items: flex-end;
-    padding-bottom: 80px;
+    height: 100vh;
+    min-height: 600px;
+    align-items: center;
+    padding-bottom: 0;
+  }
+  
+  .bgWrapper {
+    height: 100%; 
   }
   
   .bgImage {
-    object-position: 70% center;
+    object-fit: cover;
+    object-position: center center;
+  }
+  
+  .bgOverlay {
+    background: linear-gradient(to top, rgba(13, 10, 20, 0.9) 0%, rgba(13, 10, 20, 0) 50%);
+  }
+  
+  .container {
+    align-items: flex-end;
+    padding-bottom: 15vh; /* Keep buttons near the bottom */
   }
   
   .content {
     margin-top: 0;
-    padding: var(--spacing-8);
+    padding: var(--spacing-4);
     background: transparent;
+    max-width: 100%;
   }
   
   .eyebrow {
-    font-size: 12px;
+    font-size: 11px;
+    margin-bottom: var(--spacing-4);
   }
   
+  .title {
+    font-size: clamp(24px, 7vw, 32px);
+    margin-bottom: var(--spacing-4);
+  }
+
   .description {
-    font-size: 16px;
+    font-size: 15px;
+    margin-bottom: var(--spacing-8);
   }
   
   .actions {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: var(--spacing-4);
+    width: 100%;
   }
   
-  .btnPrimary {
+  .btnPrimary, .btnSecondary {
     width: 100%;
+    max-width: 320px;
+    justify-content: center;
   }
 }
 
