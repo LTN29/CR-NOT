@@ -1,4 +1,3 @@
-import { getImageUrl } from '../../config';
 import styles from './Footer.module.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 

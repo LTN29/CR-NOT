@@ -209,13 +209,13 @@
     padding: 0 16px;
   }
   .logoImage {
-    height: 35px;
+    height: 20px;
     width: auto;
     margin-left: 0;
   }
   .headerScrolled .logoImage,
   .headerInnerPage .logoImage {
-    height: 28px;
+    height: 16px;
     width: auto;
   }
   .headerActions {
