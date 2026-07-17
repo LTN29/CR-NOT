@@ -3,7 +3,7 @@ import styles from './BrandSoulSection.module.css';
 
 export function BrandSoulSection() {
   return (
-    <section className={styles.section}>
+    <section id="about" className={styles.section}>
       <motion.div 
         className={styles.accentMark}
         initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-50%" }}

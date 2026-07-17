@@ -28,12 +28,7 @@ export function HeroSection() {
   return (
     <section className={styles.hero}>
       {/* Background Image without scale animation to prevent blur */}
-      <motion.div 
-        className={styles.bgWrapper}
-        initial={{ clipPath: 'inset(15% 5% 15% 5% round 10px)', filter: 'brightness(0.5)', scale: 1.05 }}
-        animate={{ clipPath: 'inset(0% 0% 0% 0% round 0px)', filter: 'brightness(1)', scale: 1 }}
-        transition={{ duration: 2.2, ease: [0.16, 1, 0.3, 1] }}
-      >
+      <div className={styles.bgWrapper}>
         <img 
           src="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/banner_crenot.png" 
           alt="Crenot Active Lifestyle" 
@@ -41,7 +36,23 @@ export function HeroSection() {
           fetchPriority="high"
         />
         <div className={styles.bgOverlay}></div>
-      </motion.div>
+        
+        {/* Premium Curtain Reveal */}
+        <motion.div
+          initial={{ y: "0%" }}
+          animate={{ y: "100%" }}
+          transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "#0d0a14",
+            zIndex: 5
+          }}
+        />
+      </div>
 
       {/* Content Container */}
       <div className={styles.container}>

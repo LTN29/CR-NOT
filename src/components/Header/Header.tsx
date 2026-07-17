@@ -38,20 +38,20 @@ export default function Header() {
           
           <ul className={styles.menu}>
             <li>
-              <Link to="/" className={`${styles.menuLink} ${isHomePage ? styles.active : ''}`}>Trang Chủ</Link>
+              <Link to="/" onClick={() => window.scrollTo(0,0)} className={`${styles.menuLink} ${isHomePage ? styles.active : ''}`}>Trang Chủ</Link>
             </li>
-            <li><a href="#" className={styles.menuLink}>Sản Phẩm</a></li>
-            <li><a href="#" className={styles.menuLink}>Về Chúng Tôi</a></li>
-            <li><a href="#" className={styles.menuLink}>Hỗ Trợ</a></li>
+            <li><a href="#products" className={styles.menuLink}>Sản Phẩm</a></li>
+            <li><a href="#about" className={styles.menuLink}>Về Chúng Tôi</a></li>
+            <li><a href="#support" className={styles.menuLink}>Hỗ Trợ</a></li>
           </ul>
 
           <div className={styles.headerActions}>
-            <button className={styles.iconBtn} aria-label="Search">
+            <button className={styles.iconBtn} aria-label="Search" onClick={() => alert('Chức năng Tìm kiếm đang được phát triển.')}>
               <Search size={20} strokeWidth={1.5} />
             </button>
-            <button className={styles.iconBtn} aria-label="Cart">
+            <a href="https://simi.vn" target="_blank" rel="noopener noreferrer" className={styles.iconBtn} aria-label="Cart">
               <ShoppingBag size={20} strokeWidth={1.5} />
-            </button>
+            </a>
             <button className={`${styles.iconBtn} ${styles.mobileMenuBtn}`} aria-label="Menu">
               <Menu size={20} strokeWidth={1.5} />
             </button>

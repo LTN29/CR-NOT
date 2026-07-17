@@ -90,7 +90,7 @@ function ProductCard({ product, index }: { product: any, index: number }) {
 
 export function ProductEcosystemSection() {
   return (
-    <section className={styles.section} id="products">
+    <section id="products" className={styles.section}>
       <div className={styles.container}>
         
         {/* Khôi phục banner.webp tuyệt đẹp */}

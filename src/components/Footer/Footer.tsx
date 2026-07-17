@@ -1,12 +1,13 @@
+import { getImageUrl } from '../../config';
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer id="support" className={styles.footer}>
       <div className="container">
         <div className={styles.grid}>
           <div>
-            <img src="/images/Crenot Beauty - transparent.png" alt="Crenot" className={styles.logo} />
+            <img src={getImageUrl('/logo.webp')} alt="Crenot" className={styles.logo} />
             <p className={styles.description}>
               CRÉNOT kiến tạo một phong cách sống hiện đại, kết hợp giữa công nghệ thông minh, sức khỏe và sắc đẹp.
             </p>

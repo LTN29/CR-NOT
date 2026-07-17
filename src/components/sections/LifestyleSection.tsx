@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
+import { getImageUrl } from '../../config';
 import styles from './LifestyleSection.module.css';
 
 export function LifestyleSection() {
   return (
     <section className={styles.section}>
-      <img src="/images/crenot factory.png" alt="Lifestyle" className={styles.bgImage} />
+      <img src={getImageUrl('/crenot-factory.webp')} alt="Lifestyle" className={styles.bgImage} />
       
       <div className={`container ${styles.content}`}>
         <motion.h2 
