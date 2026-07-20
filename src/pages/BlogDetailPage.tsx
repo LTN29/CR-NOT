@@ -34,11 +34,10 @@ export default function BlogDetailPage() {
 
           <img src={post.image} alt={post.title} className={styles.heroImage} />
 
-          <div className={styles.content}>
-            {post.content.split('\n').map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
-            ))}
-          </div>
+          <div 
+            className={styles.content}
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         </motion.div>
       </div>
     </div>

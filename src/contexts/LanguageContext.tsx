@@ -174,7 +174,7 @@ const dictionaries = {
       eyebrow: "Kiến Thức",
       headline: "CRÉNOT Story",
       subtitle: "Khám phá các kiến thức về sức khỏe, làm đẹp và phong cách sống hiện đại.",
-      view_all: "XEM TẤT CẢ BÀI VÍT"
+      view_all: "XEM TẤT CẢ BÀI VIẾT"
     },
     blogs_data: {
       'hieu-dung-ve-14-chi-so': {

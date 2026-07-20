@@ -58,6 +58,29 @@
   margin-bottom: var(--spacing-6);
 }
 
+.content h3 {
+  color: var(--color-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-top: var(--spacing-10);
+  margin-bottom: var(--spacing-4);
+}
+
+.content ul {
+  list-style-type: disc;
+  padding-left: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+}
+
+.content li {
+  margin-bottom: var(--spacing-2);
+}
+
+.content strong {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
 .backBtn {
   display: inline-flex;
   align-items: center;
