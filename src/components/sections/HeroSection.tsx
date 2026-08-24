@@ -30,7 +30,12 @@ export function HeroSection() {
     <section className={styles.hero}>
       {/* Background Image without scale animation to prevent blur */}
       <div className={styles.bgWrapper}>
-        <picture>
+        <motion.picture
+          initial={{ scale: 1.15, opacity: 0.5 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 1.8, ease: [0.2, 0.8, 0.2, 1] }}
+          style={{ display: "block", width: "100%", height: "100%" }}
+        >
           <source 
             media="(max-width: 768px)" 
             srcSet="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/crenot_banner_mobile.png" 
@@ -41,24 +46,10 @@ export function HeroSection() {
             className={styles.bgImage}
             fetchPriority="high"
           />
-        </picture>
+        </motion.picture>
         <div className={styles.bgOverlay}></div>
         
-        {/* Premium Curtain Reveal */}
-        <motion.div
-          initial={{ y: "0%" }}
-          animate={{ y: "100%" }}
-          transition={{ duration: 1.4, ease: [0.76, 0, 0.24, 1] }}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "#0d0a14",
-            zIndex: 5
-          }}
-        />
+
       </div>
 
       {/* Content Container */}

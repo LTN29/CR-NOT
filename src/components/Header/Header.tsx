@@ -35,6 +35,7 @@ export default function Header() {
               src="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/Crenot-Logo.png" 
               alt="CRÉNOT Logo" 
               className={styles.logoImage}
+              fetchPriority="high"
             />
           </Link>
           
