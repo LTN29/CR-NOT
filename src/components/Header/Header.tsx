@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { ShoppingBag, Search, Menu, Globe } from 'lucide-react';
+import { ExternalLink, Search, Menu, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './Header.module.css';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { SIMI_BASE_URL } from '../../config';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -57,13 +58,13 @@ export default function Header() {
               <span className={styles.langDivider}>/</span>
               <span className={language === 'jp' ? styles.langActive : styles.langOption} onClick={() => setLanguage('jp')}>JP</span>
             </div>
-            <button className={styles.iconBtn} aria-label="Search" onClick={() => alert(t('header.search_alert'))}>
+            <button className={styles.iconBtn} aria-label={t('header.search_label')} onClick={() => alert(t('header.search_alert'))}>
               <Search size={20} strokeWidth={1.5} />
             </button>
-            <a href="https://simi.vn" target="_blank" rel="noopener noreferrer" className={styles.iconBtn} aria-label="Cart">
-              <ShoppingBag size={20} strokeWidth={1.5} />
+            <a href={SIMI_BASE_URL} target="_blank" rel="noopener noreferrer" className={styles.iconBtn} aria-label={t('header.simi')} title={t('header.simi')}>
+              <ExternalLink size={20} strokeWidth={1.5} />
             </a>
-            <button className={`${styles.iconBtn} ${styles.mobileMenuBtn}`} aria-label="Menu">
+            <button className={`${styles.iconBtn} ${styles.mobileMenuBtn}`} aria-label={t('header.menu_label')}>
               <Menu size={20} strokeWidth={1.5} />
             </button>
           </div>

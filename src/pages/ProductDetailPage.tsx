@@ -2,6 +2,7 @@ import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useMemo, useEffect } from 'react';
 import { products } from '../data/products';
+import { getSimiProductUrl } from '../config';
 import { useLanguage } from '../contexts/LanguageContext';
 import styles from './ProductDetailPage.module.css';
 
@@ -159,7 +160,7 @@ export default function ProductDetailPage() {
               
               <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 <a 
-                  href="https://simi.vn" 
+                  href={getSimiProductUrl(product.id)}
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className={styles.buyBtn}

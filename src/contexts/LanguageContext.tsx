@@ -19,6 +19,9 @@ const dictionaries = {
       about: "Về Chúng Tôi",
       support: "Hỗ Trợ",
       search_alert: "Chức năng Tìm kiếm đang được phát triển.",
+      simi: "Mua tại SIMI.vn",
+      search_label: "Tìm kiếm",
+      menu_label: "Mở menu",
     },
     hero: {
       btn_explore: "Khám phá sản phẩm",
@@ -134,7 +137,7 @@ const dictionaries = {
       color: "Màu sắc:",
       white: "Trắng",
       black: "Đen",
-      buy: "Mua Hàng Chính Hãng",
+      buy: "Mua tại SIMI.vn",
       explore_specs: "Khám phá Thông số Kỹ thuật",
       tech: "Công Nghệ Tiên Phong",
       specs: "Thông Số Kỹ Thuật"
@@ -211,16 +214,24 @@ const dictionaries = {
       products: "Sản Phẩm",
       prod1: "Máy Triệt Lông",
       prod2: "Cân Sức Khoẻ Thông Minh",
-      prod3: "Mua Hàng Chính Hãng",
+      prod3: "Mua tại SIMI.vn",
       support: "Hỗ Trợ Khách Hàng",
       sup1: "Trung Tâm Bảo Hành",
       sup2: "Hướng Dẫn Sử Dụng",
       sup3: "Chính Sách Đổi Trả",
       sup4: "Liên Hệ",
       connect: "Kết Nối",
+      legal_title: "Thông tin pháp lý",
+      legal_disclosure: "CRÉNOT là website giới thiệu thương hiệu và sản phẩm. Website không tiếp nhận đơn đặt hàng và không thực hiện giao dịch mua bán trực tuyến. Việc mua hàng, thanh toán, giao hàng, đổi trả và các giao dịch thương mại được thực hiện tại SIMI.vn.",
+      simi_link: "SIMI.vn",
+      site_operator: "Đơn vị quản lý website",
+      tax_code: "Mã số thuế",
+      address: "Địa chỉ",
+      hotline: "Hotline",
+      email: "Email",
       rights: "Crenot Home. All rights reserved.",
       terms: "Điều khoản",
-      privacy: "Bảo mật"
+      privacy: "Chính sách bảo mật"
     }
   },
   en: {
@@ -230,6 +241,9 @@ const dictionaries = {
       about: "About Us",
       support: "Support",
       search_alert: "Search function is under development.",
+      simi: "Buy at SIMI.vn",
+      search_label: "Search",
+      menu_label: "Open menu",
     },
     hero: {
       btn_explore: "Explore Products",
@@ -345,7 +359,7 @@ const dictionaries = {
       color: "Color:",
       white: "White",
       black: "Black",
-      buy: "Buy Authentic Product",
+      buy: "Buy at SIMI.vn",
       explore_specs: "Explore Tech Specs",
       tech: "Pioneering Technology",
       specs: "Technical Specifications"
@@ -422,16 +436,24 @@ const dictionaries = {
       products: "Products",
       prod1: "Hair Removal",
       prod2: "Smart Body Scale",
-      prod3: "Buy Genuine Products",
+      prod3: "Buy at SIMI.vn",
       support: "Customer Support",
       sup1: "Warranty Center",
       sup2: "User Manuals",
       sup3: "Return Policy",
       sup4: "Contact",
       connect: "Connect",
+      legal_title: "Legal information",
+      legal_disclosure: "CRÉNOT is a website introducing the brand and its products. It does not accept orders or conduct online sales. Purchases, payments, delivery, returns, and all commercial transactions take place at SIMI.vn.",
+      simi_link: "SIMI.vn",
+      site_operator: "Website operator",
+      tax_code: "Tax ID",
+      address: "Address",
+      hotline: "Hotline",
+      email: "Email",
       rights: "Crenot Home. All rights reserved.",
       terms: "Terms",
-      privacy: "Privacy"
+      privacy: "Privacy Policy"
     }
   },
   jp: {
@@ -441,6 +463,9 @@ const dictionaries = {
       about: "会社概要",
       support: "サポート",
       search_alert: "検索機能は開発中です。",
+      simi: "SIMI.vnで購入",
+      search_label: "検索",
+      menu_label: "メニューを開く",
     },
     hero: {
       btn_explore: "製品を見る",
@@ -556,7 +581,7 @@ const dictionaries = {
       color: "カラー：",
       white: "ホワイト",
       black: "ブラック",
-      buy: "正規品を購入する",
+      buy: "SIMI.vnで購入",
       explore_specs: "技術仕様を探る",
       tech: "先駆的な技術",
       specs: "技術仕様"
@@ -633,13 +658,21 @@ const dictionaries = {
       products: "製品情報",
       prod1: "脱毛器",
       prod2: "スマート体重計",
-      prod3: "正規品の購入",
+      prod3: "SIMI.vnで購入",
       support: "カスタマーサポート",
       sup1: "保証センター",
       sup2: "取扱説明書",
       sup3: "返品ポリシー",
       sup4: "お問い合わせ",
       connect: "接続",
+      legal_title: "法的情報",
+      legal_disclosure: "CRÉNOTはブランドと製品を紹介するウェブサイトです。当サイトでは注文を受け付けず、オンラインでの売買も行っていません。購入、支払い、配送、返品などの商取引はすべてSIMI.vnで行われます。",
+      simi_link: "SIMI.vn",
+      site_operator: "ウェブサイト運営者",
+      tax_code: "税番号",
+      address: "住所",
+      hotline: "電話",
+      email: "メール",
       rights: "Crenot Home. 無断複写・転載を禁じます。",
       terms: "利用規約",
       privacy: "プライバシーポリシー"
@@ -657,6 +690,10 @@ export const LanguageProvider: React.FC<{children: React.ReactNode}> = ({ childr
     }
   }, []);
 
+  useEffect(() => {
+    document.documentElement.lang = language === 'jp' ? 'ja' : language;
+  }, [language]);
+
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
     localStorage.setItem('crenot_lang', lang);
@@ -669,7 +706,7 @@ export const LanguageProvider: React.FC<{children: React.ReactNode}> = ({ childr
       if (current[key] === undefined) {
         console.warn(`Translation key not found: ${path}`);
         // Fallback to vi
-        let fallback: any = dictionaries['vi'];
+        let fallback: any = dictionaries['en'];
         for (const k of keys) {
           if (fallback[k] === undefined) return path;
           fallback = fallback[k];

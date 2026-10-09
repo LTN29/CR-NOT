@@ -84,3 +84,38 @@
     justify-content: flex-start;
   }
 }
+
+
+.legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--spacing-8) 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.legalTitle {
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-3);
+}
+
+.legalCopy {
+  max-width: 72rem;
+  font-size: var(--font-size-xs);
+  line-height: 1.7;
+}
+
+.legalLink {
+  color: var(--color-text-inverse);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.legalMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2) var(--spacing-6);
+  margin-top: var(--spacing-4);
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.55);
+}

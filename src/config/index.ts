@@ -21,3 +21,27 @@ export const getImageUrl = (path: string) => {
 
   return path;
 };
+
+
+export const SIMI_BASE_URL = 'https://simi.vn';
+export const SIMI_PRIVACY_POLICY_URL = 'https://simi.vn/pages/chinh-sach-bao-mat';
+
+export const simiProductUrls: Readonly<Record<string, string | null>> = {
+  s2: 'https://simi.vn/can-suc-khoe-dien-tu-thong-minh-15-chi-so-crenot-gofit-s2',
+  x6: 'https://simi.vn/can-dien-tu-suc-khoe-cao-cap-crenot-gofit-x6-pr',
+  i8: 'https://simi.vn/can-dien-tu-suc-khoe-crenot-inbody-i8',
+  x3: null, // TODO: add only after the official SIMI product URL is verified.
+};
+
+export function getSimiProductUrl(productId: string) {
+  return simiProductUrls[productId] || SIMI_BASE_URL;
+}
+
+export const legalEntity = {
+  name: 'CÔNG TY CỔ PHẦN SIMIGO',
+  taxId: '0109843713',
+  // TODO: populate these from approved company data; do not guess.
+  address: null as string | null,
+  hotline: null as string | null,
+  email: null as string | null,
+} as const;
