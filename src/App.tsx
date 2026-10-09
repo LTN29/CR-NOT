@@ -1,11 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import HomePage from './pages/HomePage';
-import ProductDetailPage from './pages/ProductDetailPage';
-import BlogDetailPage from './pages/BlogDetailPage';
+
+
 import { LanguageProvider } from './contexts/LanguageContext';
 import './index.css';
+
+const ProductDetailPage = lazy(() => import('./pages/ProductDetailPage'));
+const BlogDetailPage = lazy(() => import('./pages/BlogDetailPage'));
 
 function App() {
   return (
@@ -14,8 +18,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/product/:id" element={<ProductDetailPage />} />
-          <Route path="/blog/:id" element={<BlogDetailPage />} />
+          <Route path="/product/:id" element={<Suspense fallback={null}><ProductDetailPage /></Suspense>} />
+          <Route path="/blog/:id" element={<Suspense fallback={null}><BlogDetailPage /></Suspense>} />
         </Routes>
         <Footer />
       </Router>

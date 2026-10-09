@@ -294,6 +294,7 @@
 
 /* Deep Dive Sections */
 .sectionTitle {
+  scroll-margin-top: 6rem;
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-12);

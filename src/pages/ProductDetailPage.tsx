@@ -74,7 +74,9 @@ export default function ProductDetailPage() {
   const scrollToSpecs = () => {
     const specsEl = document.getElementById('specs-section');
     if (specsEl) {
-      specsEl.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = document.querySelector('header')?.getBoundingClientRect().height ?? 64;
+      const targetTop = window.scrollY + specsEl.getBoundingClientRect().top - headerHeight - 24;
+      window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
     }
   };
 
@@ -104,6 +106,8 @@ export default function ProductDetailPage() {
                   src={displayImages[activeImageIndex]}
                   alt={`${product.name} angle ${activeImageIndex + 1}`}
                   className={styles.mainImage}
+                  fetchPriority="high"
+                  decoding="async"
                   initial={{ opacity: 0, scale: 0.8, rotateY: -30 }}
                   animate={{ opacity: 1, scale: 1, rotateY: 0 }}
                   exit={{ opacity: 0, scale: 0.8, rotateY: 30 }}
@@ -119,7 +123,7 @@ export default function ProductDetailPage() {
                   className={`${styles.thumbnail} ${idx === activeImageIndex ? styles.active : ''}`}
                   onClick={() => setActiveImageIndex(idx)}
                 >
-                  <img src={img} alt={`Thumb ${idx}`} className={styles.thumbImg} />
+                  <img src={img} alt={`Thumb ${idx}`} className={styles.thumbImg} loading="lazy" decoding="async" />
                 </div>
               ))}
             </div>
@@ -179,13 +183,13 @@ export default function ProductDetailPage() {
         {/* Features Section */}
         {product.features && product.features.length > 0 && (
           <motion.div
-            id="specs-section"
+
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className={styles.sectionTitle}>{t('product_detail.tech')}</h2>
+            <h2 id="specs-section" className={styles.sectionTitle}>{t('product_detail.tech')}</h2>
             <div className={styles.featuresGrid}>
               {(t(`products_data.${product.id}.features`) || product.features).map((feature: string, idx: number) => (
                 <div key={idx} className={styles.featureCard}>

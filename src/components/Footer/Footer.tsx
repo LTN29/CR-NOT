@@ -12,7 +12,7 @@ export default function Footer() {
       <div className="container">
         <div className={styles.grid}>
           <div>
-            <img src="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/Crenot-Logo.png" alt="Crenot" className={styles.logo} />
+            <img src="https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot/Crenot-Logo.png" alt="Crenot" className={styles.logo} loading="lazy" decoding="async" />
             <p className={styles.description}>
               {t('footer.brand_desc')}
             </p>
