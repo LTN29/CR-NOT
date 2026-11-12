@@ -4,22 +4,25 @@ import { posts } from '../../data/blogs';
 import styles from './BlogSection.module.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 
-export function BlogSection() {
-  const { t } = useLanguage();
+/** Home: the 3 newest articles with a link to the blog. Blog page (`all`): every article, title as h1. */
+export function BlogSection({ all = false }: { all?: boolean }) {
+  const { t, lp } = useLanguage();
+  const shown = all ? posts : posts.slice(0, 3);
+  const Title = all ? motion.h1 : motion.h2;
 
   return (
     <section className={styles.section}>
       <div className="container">
         <div className={styles.header}>
           <div>
-            <motion.h2 
+            <Title
               className={styles.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
               {t('blog.headline')}
-            </motion.h2>
+            </Title>
             <motion.p 
               className={styles.subtitle}
               initial={{ opacity: 0, y: 20 }}
@@ -30,8 +33,8 @@ export function BlogSection() {
               {t('blog.subtitle')}
             </motion.p>
           </div>
-          <motion.a 
-            href="#" 
+          {!all && <motion.a
+            href={lp('/blog')}
             className={styles.viewAll}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -39,12 +42,12 @@ export function BlogSection() {
             transition={{ delay: 0.2 }}
           >
             {t('blog.view_all')}
-          </motion.a>
+          </motion.a>}
         </div>
 
         <div className={styles.grid}>
-          {posts.map((post, index) => (
-            <Link to={`/blog/${post.id}`} key={post.id} style={{ textDecoration: 'none' }}>
+          {shown.map((post, index) => (
+            <Link to={lp(`/blog/${post.id}`)} key={post.id} style={{ textDecoration: 'none' }}>
               <motion.div 
                 className={styles.card}
                 initial={{ opacity: 0, y: 30 }}

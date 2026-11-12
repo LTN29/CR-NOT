@@ -49,7 +49,7 @@ function ProductCard({ product, index }: { product: any, index: number }) {
 
   const currentImage = product.images && product.images.length > 0 ? product.images[currentImageIndex] : product.image;
 
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
 
   return (
     <div className={`${styles.productRow} ${index % 2 !== 0 ? styles.reverse : ''}`}>
@@ -67,7 +67,7 @@ function ProductCard({ product, index }: { product: any, index: number }) {
           onMouseLeave={handleMouseLeave}
           style={{ rotateX, rotateY }}
         >
-          <img src={currentImage} alt={product.name} className={styles.productImage} loading="lazy" />
+          <img src={currentImage} alt={t(`products_data.${product.id}.name`)} className={styles.productImage} loading="lazy" />
         </motion.div>
       </motion.div>
       
@@ -82,7 +82,7 @@ function ProductCard({ product, index }: { product: any, index: number }) {
           <h3 className={styles.productName}>{t(`products_data.${product.id}.name`)}</h3>
           <p className={styles.description}>{t(`products_data.${product.id}.desc`)}</p>
           
-          <Link to={`/product/${product.id}`} className={styles.actionBtn}>
+          <Link to={lp(`/product/${product.id}`)} className={styles.actionBtn}>
             {t('products.explore')}
           </Link>
         </motion.div>

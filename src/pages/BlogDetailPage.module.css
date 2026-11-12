@@ -94,3 +94,156 @@
 .backBtn:hover {
   opacity: 0.8;
 }
+
+/* Section headings in the article body look like the existing h3. */
+.content h2 {
+  color: var(--color-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  margin-top: var(--spacing-12);
+  margin-bottom: var(--spacing-4);
+}
+
+.content ol {
+  padding-left: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+}
+
+.content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-4);
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.content th,
+.content td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.content thead th {
+  color: var(--color-primary);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.content tbody th {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.content :global(.source) {
+  font-size: var(--font-size-sm);
+}
+
+.tableScroll {
+  overflow-x: auto;
+}
+
+.summary {
+  margin-bottom: var(--spacing-12);
+  padding: var(--spacing-6) var(--spacing-8);
+  border: 1px solid var(--color-accent-light);
+  border-radius: var(--radius-lg);
+  background: rgba(247, 230, 178, 0.18);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.summaryLabel {
+  display: block;
+  margin-bottom: var(--spacing-3);
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.summary ul {
+  margin: 0;
+  padding-left: var(--spacing-6);
+}
+
+.summary li {
+  margin-bottom: var(--spacing-2);
+}
+
+.summary strong {
+  color: var(--color-text-primary);
+}
+
+.sectionTitle {
+  color: var(--color-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin: var(--spacing-12) 0 var(--spacing-6);
+}
+
+.faqItem {
+  padding: var(--spacing-4) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.faqItem h3 {
+  margin: 0 0 var(--spacing-2);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.faqItem p {
+  margin: 0;
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-4);
+}
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-6) var(--spacing-4);
+  background: var(--color-surface);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.productCard:hover {
+  transform: translateY(-2px);
+}
+
+.productCard img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+}
+
+@media (max-width: 600px) {
+  .heroImage {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}

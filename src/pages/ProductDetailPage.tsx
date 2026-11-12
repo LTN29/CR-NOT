@@ -4,6 +4,8 @@ import { useState, useRef, useMemo, useEffect } from 'react';
 import { products } from '../data/products';
 import { getSimiProductUrl } from '../config';
 import { useLanguage } from '../contexts/LanguageContext';
+import { postContent, postText } from '../content/posts';
+import type { QA } from '../content/products';
 import styles from './ProductDetailPage.module.css';
 
 // SVG Icons
@@ -24,7 +26,7 @@ export default function ProductDetailPage() {
   const { id } = useParams();
   const product = products.find(p => p.id === id);
   const containerRef = useRef<HTMLDivElement>(null);
-  const { t } = useLanguage();
+  const { t, lp, language } = useLanguage();
 
   // Parse colors from image URLs
   const availableColors = useMemo(() => {
@@ -59,8 +61,13 @@ export default function ProductDetailPage() {
   }, [activeColor]);
 
   if (!product) {
-    return <Navigate to="/" replace />;
+    return <Navigate to={lp('/')} replace />;
   }
+
+  const list = <T,>(value: unknown): T[] => (Array.isArray(value) ? value : []);
+  const faq = list<QA>(t(`products_data.${product.id}.faq`));
+  const notes = list<string>(t(`products_data.${product.id}.notes`));
+  const related = postContent.filter((post) => post.products.includes(product.id));
 
   const handleDragEnd = (_e: any, { offset, velocity }: any) => {
     const swipe = Math.abs(offset.x) * velocity.x;
@@ -84,7 +91,7 @@ export default function ProductDetailPage() {
     <div className={styles.page}>
       <div className={styles.container}>
         
-        <Link to="/" className={styles.backLink}>
+        <Link to={lp('/')} className={styles.backLink}>
           &larr; {t('product_detail.back')}
         </Link>
 
@@ -104,7 +111,7 @@ export default function ProductDetailPage() {
                 <motion.img
                   key={`${activeColor}-${activeImageIndex}`}
                   src={displayImages[activeImageIndex]}
-                  alt={`${product.name} angle ${activeImageIndex + 1}`}
+                  alt={`${t(`products_data.${product.id}.name`)} ${activeImageIndex + 1}`}
                   className={styles.mainImage}
                   fetchPriority="high"
                   decoding="async"
@@ -175,6 +182,18 @@ export default function ProductDetailPage() {
                 <button onClick={scrollToSpecs} className={styles.scrollIndicator}>
                   {t('product_detail.explore_specs')} <ArrowDownIcon />
                 </button>
+
+                {product.video && (
+                  <a
+                    href={`https://www.youtube.com/watch?v=${product.video}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.scrollIndicator}
+                    style={{ textDecoration: 'none' }}
+                  >
+                    {t('product_detail.video')}
+                  </a>
+                )}
               </div>
             </motion.div>
           </div>
@@ -221,6 +240,49 @@ export default function ProductDetailPage() {
               ))}
             </div>
           </motion.div>
+        )}
+
+        {/* FAQ, safety notes and related articles */}
+        {faq.length > 0 && (
+          <motion.div
+            className={styles.extraSection}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className={styles.sectionTitle}>{t('product_detail.faq')}</h2>
+            <div className={styles.specsContainer}>
+              {faq.map((item) => (
+                <div key={item.q} className={styles.faqRow}>
+                  <h3 className={styles.faqQuestion}>{item.q}</h3>
+                  <p className={styles.faqAnswer}>{item.a}</p>
+                </div>
+              ))}
+            </div>
+            {notes.length > 0 && (
+              <div className={styles.notes}>
+                <strong>{t('product_detail.notes')}</strong>
+                <ul>
+                  {notes.map((note) => <li key={note}>{note}</li>)}
+                </ul>
+              </div>
+            )}
+          </motion.div>
+        )}
+
+        {related.length > 0 && (
+          <div className={styles.extraSection}>
+            <h2 className={styles.sectionTitle}>{t('product_detail.related')}</h2>
+            <div className={styles.relatedList}>
+              {related.map((post) => (
+                <Link key={post.id} to={lp(`/blog/${post.id}`)} className={styles.relatedItem}>
+                  <img src={post.image} alt="" loading="lazy" decoding="async" />
+                  <span>{postText(post, language).title}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
         )}
 
       </div>

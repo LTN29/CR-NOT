@@ -1,3 +1,5 @@
+import { productContent } from '../content/products';
+
 export const config = {
   IMAGE_BASE_URL: 'https://pmcewuonkfurdnkzptsg.supabase.co/storage/v1/object/public/images/crenot'
 };
@@ -26,12 +28,9 @@ export const getImageUrl = (path: string) => {
 export const SIMI_BASE_URL = 'https://simi.vn';
 export const SIMI_PRIVACY_POLICY_URL = 'https://simi.vn/pages/chinh-sach-bao-mat';
 
-export const simiProductUrls: Readonly<Record<string, string | null>> = {
-  s2: 'https://simi.vn/can-suc-khoe-dien-tu-thong-minh-15-chi-so-crenot-gofit-s2',
-  x6: 'https://simi.vn/can-dien-tu-suc-khoe-cao-cap-crenot-gofit-x6-pr',
-  i8: 'https://simi.vn/can-dien-tu-suc-khoe-crenot-inbody-i8',
-  x3: null, // TODO: add only after the official SIMI product URL is verified.
-};
+export const simiProductUrls: Readonly<Record<string, string | null>> = Object.fromEntries(
+  productContent.map((p) => [p.id, p.simiUrl]),
+);
 
 export function getSimiProductUrl(productId: string) {
   return simiProductUrls[productId] || SIMI_BASE_URL;

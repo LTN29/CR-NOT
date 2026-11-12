@@ -1,10 +1,11 @@
 import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { SIMI_BASE_URL, SIMI_PRIVACY_POLICY_URL, legalEntity } from '../../config';
 
 export default function Footer() {
-  const { t } = useLanguage();
+  const { t, lp } = useLanguage();
   const legalDisclosureParts = String(t('footer.legal_disclosure')).split('SIMI.vn');
 
   return (
@@ -21,8 +22,8 @@ export default function Footer() {
           <div>
             <h4 className={styles.title}>{t('footer.products')}</h4>
             <ul className={styles.list}>
-              <li><a href="#" className={styles.link}>{t('footer.prod1')}</a></li>
-              <li><a href="#" className={styles.link}>{t('footer.prod2')}</a></li>
+              <li><Link to={lp('/product/x3')} className={styles.link}>{t('footer.prod1')}</Link></li>
+              <li><Link to={lp('/product/i8')} className={styles.link}>{t('footer.prod2')}</Link></li>
               <li><a href={SIMI_BASE_URL} target="_blank" rel="noopener noreferrer" className={styles.link}>{t('footer.prod3')}</a></li>
             </ul>
           </div>
