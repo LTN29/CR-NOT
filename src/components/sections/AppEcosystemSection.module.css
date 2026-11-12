@@ -94,15 +94,15 @@
 .visual {
   flex: 1;
   position: relative;
-  height: 600px;
+  height: clamp(480px, 72vh, 600px);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .phoneMockup {
-  width: 300px;
-  height: 600px;
+  height: clamp(480px, 72vh, 600px);
+  aspect-ratio: 1 / 2;
   background-color: var(--color-text-primary);
   border-radius: 40px;
   border: 10px solid var(--color-text-primary);

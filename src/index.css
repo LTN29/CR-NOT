@@ -13,6 +13,17 @@ html {
   scroll-behavior: smooth;
 }
 
+/*
+ * Desktop scale: rem-based sizes follow the window height, like browser zoom.
+ * A 900px-tall window gets ~87%, a full-HD window ~92%, 1030px+ stays at 100%.
+ * Phones and tablets are not affected.
+ */
+@media (min-width: 1024px) {
+  html {
+    font-size: clamp(14px, 1.55vh, 16px);
+  }
+}
+
 body {
   font-family: var(--font-family-sans);
   background-color: var(--color-background);
